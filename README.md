@@ -27,7 +27,9 @@ Complete dataset List  [Click](https://github.com/MornLiang/Gender-Based-Data-Bi
 - Equalised Odds
 - Treatment Equality
 
-**File Descriptor**
+**File Description**
+
+**Reference:** Uddin, S., Liang, H., and Guo, H., Gender-based data bias and model fairness evaluation in benchmarked open-access disease prediction datasets. Computers in Biology and Medicine. 
 
 
 
