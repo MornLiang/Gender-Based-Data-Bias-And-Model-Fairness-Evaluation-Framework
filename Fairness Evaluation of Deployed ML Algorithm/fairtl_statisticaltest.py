@@ -32,17 +32,66 @@ def build_models(seed):
 
 def calculate_metrics(y_true, y_pred):
     cm = confusion_matrix(y_true, y_pred)
-    TP = cm[1, 1]
-    TN = cm[0, 0]
-    FP = cm[0, 1]
-    FN = cm[1, 0]
+    n_classes = cm.shape[0]
 
-    TPR = TP / (TP + FN) if (TP + FN) > 0 else 0  # Sensitivity, recall, or true positive rate
-    TNR = TN / (TN + FP) if (TN + FP) > 0 else 0  # Specificity or true negative rate
-    FPR = FP / (FP + TN) if (FP + TN) > 0 else 0  # False positive rate
-    FNR = FN / (TP + FN) if (TP + FN) > 0 else 0  # False negative rate
+    if n_classes == 2:
 
-    return TPR, TNR, FPR, FNR, TP, TN, FP, FN
+        TP = cm[1, 1]
+        TN = cm[0, 0]
+        FP = cm[0, 1]
+        FN = cm[1, 0]
+
+        TPR = TP / (TP + FN) if (TP + FN) > 0 else 0  # Sensitivity, recall, or true positive rate
+        TNR = TN / (TN + FP) if (TN + FP) > 0 else 0  # Specificity or true negative rate
+        FPR = FP / (FP + TN) if (FP + TN) > 0 else 0  # False positive rate
+        FNR = FN / (TP + FN) if (TP + FN) > 0 else 0  # False negative rate
+
+        return TPR, TNR, FPR, FNR, TP, TN, FP, FN
+    
+    elif n_classes > 2:
+        TPR_list = []
+        TNR_list = []
+        FPR_list = []
+        FNR_list = []
+
+        total_TP = 0
+        total_TN = 0
+        total_FP = 0
+        total_FN = 0
+
+        for i in range(n_classes):
+            TP = cm[i, i]
+            FP = cm[:, i].sum() - TP
+            FN = cm[i, :].sum() - TP
+            TN = cm.sum() - (TP + FP + FN)
+
+            TPR = TP / (TP + FN) if (TP + FN) > 0 else 0  # Sensitivity, recall, or true positive rate
+            TNR = TN / (TN + FP) if (TN + FP) > 0 else 0  # Specificity or true negative rate
+            FPR = FP / (FP + TN) if (FP + TN) > 0 else 0  # False positive rate
+            FNR = FN / (TP + FN) if (TP + FN) > 0 else 0  # False negative rate
+
+            TPR_list.append(TPR)
+            TNR_list.append(TNR)
+            FPR_list.append(FPR)
+            FNR_list.append(FNR)
+
+            total_TP += TP
+            total_TN += TN
+            total_FP += FP
+            total_FN += FN
+
+        macro_TPR = np.mean(TPR_list)
+        macro_TNR = np.mean(TNR_list)
+        macro_FPR = np.mean(FPR_list)
+        macro_FNR = np.mean(FNR_list)
+
+        macro_TP = total_TP / n_classes
+        macro_TN = total_TN / n_classes
+        macro_FP = total_FP / n_classes
+        macro_FN = total_FN / n_classes
+
+        return macro_TPR, macro_TNR, macro_FPR, macro_FNR, macro_TP, macro_TN, macro_FP, macro_FN
+
 
 
 
