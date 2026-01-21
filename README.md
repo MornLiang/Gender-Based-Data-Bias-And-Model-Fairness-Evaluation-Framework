@@ -1,13 +1,4 @@
 # Gender-Based-Data-Bias-And-Model-Fairness-Evaluation-Framework
-
-🚀 Gender-Based Data Bias and Model Fairness Evaluation
-______      _                                 ______            __
-   / ____/___ _(_)________  ___  __________      / ____/   ______ _/ /
-  / /_  / __ `/ / ___/ __ \/ _ \/ ___/ ___/_____/ __/ | | / / __ `/ / 
- / __/ / /_/ / / /  / / / /  __(__  |__  )_____/ /___ | |/ / /_/ / /  
-/_/    \__,_/_/_/  /_/ /_/\___/____/____/     /_____/ |___/\__,_/_/
-
-
 A systematic machine learning fairness evaluation framework integrating gender-based data bias quantification (via Earth Mover's Distance) and model-level fairness assessment. Tested on 74 disease prediction datasets across 7 machine learning algorithms and 2 fairness metrics (Equalised Odds and Treatment Equality), contributing to the development of equitable AI and supports robust informed decision-making.
 
 
@@ -17,7 +8,8 @@ A systematic machine learning fairness evaluation framework integrating gender-b
 Complete dataset List  [Click](https://github.com/MornLiang/Gender-Based-Data-Bias-And-Model-Fairness-Evaluation-Framework/blob/main/open-access%20dataset%20list.xlsx)
 
 
-**Environment Configuration**
+**Environment Configuration**  
+
 Please use "pyproject.toml".
 
 
@@ -57,11 +49,12 @@ Below is the detailed organization of the core components:
 ├── 📖README.md                        # Project documentation
 ├── 📅open-access dataset list.xlsx    # Complete Open-access dataset list
 └── ⚙️pyproject.toml                   # Project configuration and dependencies
+```
 
 The repository will be actively updated. If you have any questions, please feel free to contact: huanmorningliang@gmail.com
 
 
-📝**Reference:** Uddin, S., Liang, H., and Guo, H., Gender-based data bias and model fairness evaluation in benchmarked open-access disease prediction datasets. Computers in Biology and Medicine. 
+**Reference:** Uddin, S., Liang, H., and Guo, H., Gender-based data bias and model fairness evaluation in benchmarked open-access disease prediction datasets. Computers in Biology and Medicine. 
 
 
 
