@@ -4,15 +4,15 @@ A systematic machine learning fairness evaluation framework integrating gender-b
 
 
 
-## Open-access Disease Prediction Datasets 
+### Open-access Disease Prediction Datasets 
 Complete dataset List  [Click](https://github.com/MornLiang/Gender-Based-Data-Bias-And-Model-Fairness-Evaluation-Framework/blob/main/open-access%20dataset%20list.xlsx)
 
 
-## Environment Configuration 
+### Environment Configuration 
 Please use "pyproject.toml".
 
 
-## Models Used
+### Models Used
 - Decision Tree
 - Random Forest
 - Logistic Regression
@@ -23,11 +23,11 @@ Please use "pyproject.toml".
 
 
 
-## Fairness Metrics Used
+### Fairness Metrics Used
 - Equalised Odds
 - Treatment Equality
 
-## File Description
+### File Description
 Below is the detailed organization of the core components:
 ```
 .
@@ -50,10 +50,10 @@ Below is the detailed organization of the core components:
 └── ⚙️pyproject.toml                   # Project configuration and dependencies
 ```
 
+### Declaration
 The repository will be actively updated. If you have any questions, please feel free to contact: huanmorningliang@gmail.com
 
-
-## Reference
+### Reference
  Uddin, S., Liang, H., and Guo, H., Gender-based data bias and model fairness evaluation in benchmarked open-access disease prediction datasets. Computers in Biology and Medicine. 
 
 
